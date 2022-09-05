@@ -1,0 +1,19 @@
+.notice {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  .noticeLeft {
+    vertical-align: center;
+  }
+  .noticeRight {
+    margin-left: 20px;
+    .noticeText {
+      width: 90%;
+      white-space: nowrap; // 明确不换行
+      text-overflow: ellipsis; // 超出显示...
+      overflow: hidden;
+      color: #666;
+    }
+  }
+}

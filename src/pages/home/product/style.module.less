@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  .product {
+    width: 345px;
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // webkit 相关属性 css 设置
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 14px;
+      color: #666;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .productBottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #666;
+      padding: 0 10px;
+      margin: 20px;
+      box-sizing: border-box;
+      span:first-child {
+        color: #f23030;
+      }
+    }
+  }
+}

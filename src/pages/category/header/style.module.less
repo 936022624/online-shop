@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 90px;
+  .nav {
+    background: #fff;
+  }
+  .search {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: transparent;
+    :global {
+      .am-search-input {
+        // 注意点: 在 css 模块化中，如果想覆盖 antd mobile 的样式
+        //        需要将覆盖的类名放到 :global{} 中才可以
+        background: #f7f7f7;
+      }
+    }
+  }
+}

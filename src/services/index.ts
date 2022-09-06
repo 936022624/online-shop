@@ -13,3 +13,4 @@ export const getNotice = () => Network.get("/api/v1/notice");
 export const getMenus = () => Network.get("/api/v1/menus");
 export const getProducts = () => Network.get("/api/v1/products");
 export const getCategory = () => Network.get("/api/v1/category");
+export const getCart = () => Network.get("/api/v1/cart");

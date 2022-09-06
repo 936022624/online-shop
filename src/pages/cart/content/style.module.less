@@ -1,0 +1,106 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  .item {
+    margin-top: 20px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // 边距相关
+    padding: 20px;
+    box-sizing: border-box;
+    .leftItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 20px;
+      & > b {
+        font-size: 36px;
+      }
+      & > img {
+        width: 200px;
+        border-radius: 10px;
+      }
+    }
+    .rightItem {
+      & > p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // webkit 相关样式
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 28px;
+      }
+      & > span {
+        padding: 10px;
+        border-radius: 5px;
+        background: #f2f2f2;
+      }
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 36px;
+          color: #f23030;
+        }
+        .stepper {
+          margin-top: 20px;
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+.bottom {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 100px;
+  // 提高层级
+  z-index: 999;
+  padding: 20px;
+  box-sizing: border-box;
+  .leftBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > b {
+      font-size: 30px;
+    }
+    & > span {
+      font-size: 28px;
+      margin-left: 20px;
+    }
+  }
+  .rightBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > span {
+      font-size: 30px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+    & > button {
+      width: 226px;
+      height: 76px;
+      padding: 10px;
+      background: linear-gradient(135deg, #f2140c, #f2270c 70%, #f24d0c);
+      border: none;
+      border-radius: 38px;
+      color: #fff;
+      font-size: 30px;
+    }
+  }
+}

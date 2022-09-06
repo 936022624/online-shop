@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "18309270",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1243381",
+      "name": "员工渠道APP-复选框未选中",
+      "font_class": "yuangongqudaoAPP-fuxuankuangweixuanzhong",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "1243382",
+      "name": "员工渠道APP-复选框选中",
+      "font_class": "yuangongqudaoAPP-fuxuankuangxuanzhong",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
       "icon_id": "29930",
       "name": "favor_fill",
       "font_class": "favorfill",

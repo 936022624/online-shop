@@ -36,25 +36,42 @@ export default memo(function MXContent(props) {
     <>
       {carts.length !== 0 && (
         <ul className={Style.list}>
-          {carts.map((val: CartType) => {
+          {carts.map((val: CartType, index: number) => {
             return (
               <li key={val.id} className={Style.item}>
                 <div className={Style.leftItem}>
-                  {val.selected ? (
-                    <b
-                      style={{ color: "#f23030" }}
-                      className={
-                        "iconfont icon-yuangongqudaoAPP-fuxuankuangxuanzhong"
+                  <p
+                    onClick={() => {
+                      // 修改当前商品的选中状态
+                      const list = [...carts];
+                      const currentItem = list[index];
+                      const currentVal = !currentItem.selected;
+                      currentItem.selected = currentVal;
+                      setCarts(list);
+                      // 更新选中商品的个数
+                      if (currentVal) {
+                        setSelectedCount(selectedCount + 1);
+                      } else {
+                        setSelectedCount(selectedCount - 1);
                       }
-                    />
-                  ) : (
-                    <b
-                      style={{ color: "#666" }}
-                      className={
-                        "iconfont icon-yuangongqudaoAPP-fuxuankuangweixuanzhong"
-                      }
-                    />
-                  )}
+                    }}
+                  >
+                    {val.selected ? (
+                      <b
+                        style={{ color: "#f23030" }}
+                        className={
+                          "iconfont icon-yuangongqudaoAPP-fuxuankuangxuanzhong"
+                        }
+                      />
+                    ) : (
+                      <b
+                        style={{ color: "#666" }}
+                        className={
+                          "iconfont icon-yuangongqudaoAPP-fuxuankuangweixuanzhong"
+                        }
+                      />
+                    )}
+                  </p>
                   <img src={val.product_pic} alt="" />
                 </div>
                 <div className={Style.rightItem}>
@@ -74,6 +91,12 @@ export default memo(function MXContent(props) {
                       showNumber
                       min={1}
                       defaultValue={val.product_quantity}
+                      onChange={(val) => {
+                        const list = [...carts];
+                        const currentItem = list[index];
+                        currentItem.product_quantity = val;
+                        setCarts(list);
+                      }}
                     />
                   </div>
                 </div>
@@ -84,17 +107,39 @@ export default memo(function MXContent(props) {
       )}
       <div className={Style.bottom}>
         <div className={Style.leftBottom}>
-          {selectedCount === carts.length ? (
-            <b
-              style={{ color: "#f23030" }}
-              className="iconfont icon-yuangongqudaoAPP-fuxuankuangxuanzhong"
-            />
-          ) : (
-            <b
-              style={{ color: "#666" }}
-              className="iconfont icon-yuangongqudaoAPP-fuxuankuangweixuanzhong"
-            />
-          )}
+          <p
+            onClick={() => {
+              // 当前是否选中
+              const currentVal = selectedCount === carts.length;
+              const list = [...carts];
+              if (currentVal) {
+                // 变成非全选
+                list.forEach((item) => {
+                  item.selected = false;
+                });
+                setSelectedCount(0);
+              } else {
+                // 变成全选
+                list.forEach((item) => {
+                  item.selected = true;
+                });
+                setSelectedCount(carts.length);
+              }
+              setCarts(list);
+            }}
+          >
+            {selectedCount === carts.length ? (
+              <b
+                style={{ color: "#f23030" }}
+                className="iconfont icon-yuangongqudaoAPP-fuxuankuangxuanzhong"
+              />
+            ) : (
+              <b
+                style={{ color: "#666" }}
+                className="iconfont icon-yuangongqudaoAPP-fuxuankuangweixuanzhong"
+              />
+            )}
+          </p>
           <span>全选</span>
         </div>
         <div className={Style.rightBottom}>

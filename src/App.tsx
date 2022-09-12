@@ -19,7 +19,7 @@ export default withRouter(
     const history = useHistory();
     const { setSelectedTab, setHidden } = useSelectedData();
     /**
-     * 当每次产生副作用的时候
+     * 当「每次」产生副作用的时候
      * 都会执行该方法
      * 然后再在这里面执行 Tabbar 相关的逻辑即可
      */

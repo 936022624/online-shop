@@ -9,6 +9,7 @@ const MXSearch = React.lazy(() => import("@/pages/search"));
 const MXLogin = React.lazy(() => import("@/pages/login"));
 const MXDetail = React.lazy(() => import("@/pages/home/detail"));
 const MXList = React.lazy(() => import("@/pages/list"));
+const MXOrder = React.lazy(() => import("@/pages/order"));
 
 const routes = [
   {
@@ -42,6 +43,10 @@ const routes = [
   {
     path: "/me",
     component: MXMe,
+  },
+  {
+    path: "/order",
+    component: MXOrder,
   },
   {
     path: "/",

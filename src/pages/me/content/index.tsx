@@ -60,7 +60,7 @@ export default memo(function NJContent() {
       <div className={Style.contentBottom}>
         <div
           onClick={() => {
-            history.push("/order");
+            history.push("/order/1");
           }}
         >
           <span>我的订单</span>
@@ -73,12 +73,12 @@ export default memo(function NJContent() {
           </span>
         </div>
         <ul>
-          {menus.map((menu) => {
+          {menus.map((menu, index) => {
             return (
               <li
                 key={menu.title}
                 onClick={() => {
-                  history.push("/order");
+                  history.push(`/order/${index + 2}`);
                 }}
               >
                 <img src={menu.image} alt="" />

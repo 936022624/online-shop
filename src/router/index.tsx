@@ -45,7 +45,7 @@ const routes = [
     component: MXMe,
   },
   {
-    path: "/order",
+    path: "/order/:type",
     component: MXOrder,
   },
   {

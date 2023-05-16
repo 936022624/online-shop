@@ -21,7 +21,7 @@ interface DataType {
   url: string;
 }
 
-export default memo(function MXNotice(props) {
+export default memo(function Notice(props) {
   const [data, setData] = useState<Array<DataType>>([]);
   const history = useHistory();
 

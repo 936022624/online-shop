@@ -4,7 +4,7 @@ import { SearchBar } from "antd-mobile";
 import { useHistory } from "react-router-dom";
 import Style from "@/pages/category/header/style.module.less";
 
-export default memo(function MXHeader() {
+export default memo(function Header() {
   const history = useHistory();
   return (
     <div className={Style.header}>

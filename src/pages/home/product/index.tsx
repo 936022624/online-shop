@@ -18,7 +18,7 @@ interface ProductType {
   verify_status: number; //'审核状态：0->未审核；1->审核通过',
 }
 
-export default memo(function MXProduct(props) {
+export default memo(function Product(props) {
   const [products, setProducts] = useState<Array<ProductType>>([]);
   const history = useHistory();
 

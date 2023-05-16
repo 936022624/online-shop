@@ -2,7 +2,7 @@ import React, { memo, Suspense, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import routes from "@/router";
-import MXFooter from "@/components/footer";
+import Footer from "@/components/footer";
 import useSelectedData from "@/store/tabbar";
 // 如果是在 TS 的 React 项目中使用 less 模块化，那么还必须额外添加一个配置
 // react-app-env.d.ts 修改
@@ -51,7 +51,7 @@ export default withRouter(
           {renderRoutes(routes)}
         </Suspense>
         {/* 所有界面都需要显示的内容 */}
-        <MXFooter />
+        <Footer />
       </div>
     );
   })

@@ -8,7 +8,7 @@ import c3 from "@/assets/images/c3.png";
 import c4 from "@/assets/images/c4.png";
 import c5 from "@/assets/images/c4.png";
 
-export default memo(function NJContent() {
+export default memo(function Content() {
   const history = useHistory();
   const menus: any[] = [
     {

@@ -3,12 +3,12 @@ import { NavBar } from "antd-mobile";
 import { useHistory } from "react-router-dom";
 import Style from "@/components/header/style.module.less";
 
-interface NJHeaderProps {
+interface HeaderProps {
   title: string;
 }
 
-export default memo(function MXHeader(
-  props: React.PropsWithChildren<NJHeaderProps>
+export default memo(function Header(
+  props: React.PropsWithChildren<HeaderProps>
 ) {
   const history = useHistory();
   return (

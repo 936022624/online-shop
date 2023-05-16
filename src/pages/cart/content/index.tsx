@@ -22,7 +22,7 @@ interface CartType {
   selected: boolean; // 用于保存当前是否选中
 }
 
-export default memo(function MXContent(props) {
+export default memo(function Content(props) {
   const [carts, setCarts] = useState<Array<CartType>>([]);
   const [selectedCount, setSelectedCount] = useState<number>(0); // 记录当前选中的列表中有多少条数据
 

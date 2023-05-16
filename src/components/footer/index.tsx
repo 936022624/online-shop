@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { TabBar } from "antd-mobile";
 import useSelectedData from "@/store/tabbar";
 
-export default memo(function MXFooter(props) {
+export default memo(function Footer(props) {
   // 从全局拿到
   // const { selectedTab, setSelectedTab, hidden, setHidden } = useSelectedData();
   const [fullScreen, setFullScreen] = useState(true);

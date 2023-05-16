@@ -1,13 +1,13 @@
 import React, { memo } from "react";
 import { SearchBar, Tabs } from "antd-mobile";
-import NJOrderList from "@/pages/order/orderList";
+import OrderList from "@/pages/order/orderList";
 import Style from "@/pages/order/content/style.module.less";
 
 interface ContentType {
   type?: string;
 }
 
-export default memo(function MXContent(
+export default memo(function Content(
   props: React.PropsWithChildren<ContentType>
 ) {
   // tabs 数组枚举
@@ -29,7 +29,7 @@ export default memo(function MXContent(
         tabBarActiveTextColor="#f23030"
         tabBarUnderlineStyle={{ borderColor: "#f23030" }}
       ></Tabs>
-      <NJOrderList />
+      <OrderList />
     </div>
   );
 });

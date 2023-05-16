@@ -14,7 +14,7 @@ interface NoticeType {
   sort: number; //'排序',
 }
 
-export default memo(function MXNotice(props) {
+export default memo(function Notice(props) {
   const [notice, setNotice] = useState<Array<NoticeType>>([]);
   useEffect(() => {
     getNotice().then((response) => {

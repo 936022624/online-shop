@@ -1,52 +1,52 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 
-const MXHome = React.lazy(() => import("@/pages/home"));
-const MXCategory = React.lazy(() => import("@/pages/category"));
-const MXCart = React.lazy(() => import("@/pages/cart"));
-const MXMe = React.lazy(() => import("@/pages/me"));
-const MXSearch = React.lazy(() => import("@/pages/search"));
-const MXLogin = React.lazy(() => import("@/pages/login"));
-const MXDetail = React.lazy(() => import("@/pages/home/detail"));
-const MXList = React.lazy(() => import("@/pages/list"));
-const MXOrder = React.lazy(() => import("@/pages/order"));
+const Home = React.lazy(() => import("@/pages/home"));
+const Category = React.lazy(() => import("@/pages/category"));
+const Cart = React.lazy(() => import("@/pages/cart"));
+const Me = React.lazy(() => import("@/pages/me"));
+const Search = React.lazy(() => import("@/pages/search"));
+const Login = React.lazy(() => import("@/pages/login"));
+const Detail = React.lazy(() => import("@/pages/home/detail"));
+const List = React.lazy(() => import("@/pages/list"));
+const Order = React.lazy(() => import("@/pages/order"));
 
 const routes = [
   {
     path: "/home",
-    component: MXHome,
+    component: Home,
   },
   {
     path: "/category",
-    component: MXCategory,
+    component: Category,
   },
   {
     path: "/cart",
-    component: MXCart,
+    component: Cart,
   },
   {
     path: "/detail/:id",
-    component: MXDetail,
+    component: Detail,
   },
   {
     path: "/list/:id",
-    component: MXList,
+    component: List,
   },
   {
     path: "/search",
-    component: MXSearch,
+    component: Search,
   },
   {
     path: "/login",
-    component: MXLogin,
+    component: Login,
   },
   {
     path: "/me",
-    component: MXMe,
+    component: Me,
   },
   {
     path: "/order/:type",
-    component: MXOrder,
+    component: Order,
   },
   {
     path: "/",

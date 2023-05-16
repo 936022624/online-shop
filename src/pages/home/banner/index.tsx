@@ -21,7 +21,7 @@ interface BannerType {
  * 但是这个问题没有必要去修复，在其他浏览器上是不会报错的
  * 并且不要去查询一些野资料，例如：设置样式 *{touch-action: none }
  */
-export default memo(function MXBanner(props) {
+export default memo(function Banner(props) {
   const [banner, setBanner] = useState<Array<BannerType>>([]);
   useEffect(() => {
     getBanner().then((response) => {

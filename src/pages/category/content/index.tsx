@@ -16,7 +16,7 @@ interface CategoryType {
   children: CategoryType[]; // '子分类'
 }
 
-export default memo(function MXContent(props) {
+export default memo(function Content(props) {
   const [tabs, setTabs] = useState<Array<any>>([]);
   const history = useHistory();
   useEffect(() => {

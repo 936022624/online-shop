@@ -30,7 +30,7 @@ export interface OrderType {
   oder_list: ProductType[]; //'订单商品列表'
 }
 
-export default memo(function MXOrderList(props: React.PropsWithChildren<any>) {
+export default memo(function OrderList(props: React.PropsWithChildren<any>) {
   const [orders, setOrders] = useState<OrderType[]>([]);
 
   useEffect(() => {

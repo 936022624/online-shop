@@ -1,13 +1,13 @@
 import React, { memo } from "react";
 import Style from "@/pages/cart/style.module.less";
-import MXHeader from "@/components/header";
-import MXContent from "@/pages/cart/content";
+import Header from "@/components/header";
+import Content from "@/pages/cart/content";
 
-export default memo(function MXCart(props) {
+export default memo(function Cart(props) {
   return (
     <div className={Style.main}>
-      <MXHeader title="购物车" />
-      <MXContent />
+      <Header title="购物车" />
+      <Content />
     </div>
   );
 });

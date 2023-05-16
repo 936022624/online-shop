@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
   .item {
     background: #fff;
     margin-top: 20px;
@@ -9,19 +10,64 @@
     box-sizing: border-box;
     .product {
       margin-top: 20px;
-      .productTop {
-        display: flex;
-        justify-content: space-between;
-        & > img {
-          width: 200px;
-          border-radius: 10px;
-          margin-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      & > img {
+        width: 200px;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+      & > div:nth-child(2) {
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          // webkit 相关样式
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          font-size: 28px;
         }
-        & > div {
-          p {
-          }
-          span {
-          }
+        span {
+          padding: 10px;
+          border-radius: 5px;
+          background: #f2f2f2;
+          font-size: 28px;
+        }
+      }
+      & > div:nth-child(3) {
+        color: #666;
+        p {
+          font-size: 30px;
+        }
+        span {
+          font-size: 28px;
+        }
+      }
+    }
+    .total {
+      margin-top: 20px;
+      text-align: end;
+      font-size: 32px;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      color: #666;
+      button {
+        width: 200px;
+        height: 60px;
+        padding: 10px;
+        font-size: 30px;
+        border-radius: 30px;
+        border: 1px solid #666;
+        margin-left: 20px;
+        color: #666;
+        background: #fff;
+        &:nth-child(2) {
+          color: #f23030;
+          border-color: #f23030;
         }
       }
     }

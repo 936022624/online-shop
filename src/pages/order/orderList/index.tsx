@@ -1,5 +1,4 @@
-import { getOrder } from "@/services";
-import React, { memo, useState, useEffect } from "react";
+import React, { memo } from "react";
 import Style from "./style.module.less";
 
 interface AttrType {
@@ -30,45 +29,93 @@ export interface OrderType {
   oder_list: ProductType[]; //'订单商品列表'
 }
 
-export default memo(function OrderList(props: React.PropsWithChildren<any>) {
-  const [orders, setOrders] = useState<OrderType[]>([]);
+interface OrderListType {
+  list: OrderType[];
+}
 
-  useEffect(() => {
-    getOrder().then((response) => {
-      setOrders(response.data);
-    });
-  }, []);
-
-  // 订单列表
+export default memo(function OrderList(
+  props: React.PropsWithChildren<OrderListType>
+) {
+  const { list = [] } = props;
   return (
+    // 订单列表
     <ul className={Style.list}>
-      {orders.length !== 0 &&
-        orders.map((order: OrderType) => {
+      {list.length !== 0 &&
+        list.map((order) => {
           // 每个订单
           return (
-            <li className={Style.item}>
+            <li className={Style.item} key={order.id}>
               {order.oder_list.length !== 0 &&
                 // 当前订单中的商品
-                order.oder_list.map((product: ProductType) => {
+                order.oder_list.map((product) => {
                   return (
-                    <div className={Style.product}>
-                      <div className={Style.productTop}>
-                        <img src={product.product_pic} alt="" />
-                        <div>
-                          <p>{product.product_name}</p>
-                          <span>
-                            {product.product_attr
-                              .map((attr) => {
-                                return attr.value;
-                              })
-                              .join(",")}
-                          </span>
-                        </div>
+                    <div className={Style.product} key={product.id}>
+                      <img
+                        src={product.product_pic}
+                        alt={product.product_name}
+                      />
+                      <div>
+                        <p>{product.product_name}</p>
+                        <span>
+                          {product.product_attr
+                            .map((attr) => {
+                              return attr.value;
+                            })
+                            .join("，")}
+                          <i className={"iconfont icon-31xiala"}></i>
+                        </span>
                       </div>
-                      <div className={Style.productBottom}></div>
+                      <div>
+                        <p>¥{product.product_price}</p>
+                        <span>{`X${product.product_quantity}`}</span>
+                      </div>
                     </div>
                   );
                 })}
+              <div className={Style.total}>
+                总价：¥
+                {order.oder_list.reduce((total, product) => {
+                  return (
+                    total + product.product_price * product.product_quantity
+                  );
+                }, 0)}
+              </div>
+              {/* 待付款 */}
+              {order.status === 0 && (
+                <div className={Style.bottom}>
+                  <span>更多</span>
+                  <div>
+                    <button>修改地址</button>
+                    <button>付款</button>
+                  </div>
+                </div>
+              )}
+              {/* 待发货 */}
+              {/* {order.status === 1 && <div>456</div>} */}
+              {/* 已发货 */}
+              {order.status === 2 && (
+                <div>
+                  <div className={Style.bottom}>
+                    <span>更多</span>
+                    <div>
+                      <button>查看物流</button>
+                      <button>确认收货</button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* 待评价 */}
+              {order.status === 3 && (
+                <div>
+                  <div className={Style.bottom}>
+                    <span>更多</span>
+                    <div>
+                      <button>查看物流</button>
+                      <button>评价</button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </li>
           );
         })}

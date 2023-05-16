@@ -1,0 +1,40 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 90px;
+  .nav {
+    background: #fff;
+    .back {
+      font-size: 44px;
+      color: #666;
+    }
+    .btn {
+      border: none;
+      background: #f23030;
+      color: #fff;
+      font-size: 28px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+  .search {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: transparent;
+    :global {
+      .am-search-input {
+        background: #f5f5f5;
+        border-radius: 30px;
+      }
+      .am-search-cancel {
+        display: none;
+      }
+    }
+  }
+}

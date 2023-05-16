@@ -1,5 +1,11 @@
 import React, { memo } from "react";
+import Header from "@/pages/search/header";
+import Style from "./style.module.less";
 
 export default memo(function Search(props) {
-  return <div>我是搜索页面</div>;
+  return (
+    <div className={Style.main}>
+      <Header />
+    </div>
+  );
 });

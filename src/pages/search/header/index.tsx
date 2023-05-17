@@ -1,35 +1,36 @@
 import React, { memo, useState } from "react";
-import classNames from "classnames";
-import { NavBar } from "antd-mobile";
-import { SearchBar } from "antd-mobile";
+import { NavBar, SearchBar } from "antd-mobile";
 import { useHistory } from "react-router-dom";
 import Style from "@/pages/search/header/style.module.less";
+import ClassNames from "classnames";
 
-export default memo(function Header() {
+export default memo(function NJHeader() {
   const history = useHistory();
   const [value, setValue] = useState("");
   const submit = () => {
-    // 1. 获取以前的数据
+    // console.log(value);
+    // 1.获取以前的数据
     const localStorage = window.localStorage;
-    // 2. 将当前数据添加到以前数据的前面
-    const searchHistory = localStorage.getItem("searchHistory");
+    // 2.将当前数据添加到以前数据的前面
+    const result = localStorage.getItem("njHistory");
     let list: string[] = [];
-    // 3. 将添加之后的数据重新存储起来
-    if (searchHistory) {
-      list = searchHistory.split(" ");
+    if (result) {
+      list = result.split(",");
     }
+    console.log(list);
     list.unshift(value);
-    console.log("list", list);
-    localStorage.setItem("searchHistory", list.join(","));
+    console.log(list);
+    // 3.将添加之后的数据重新存储起来
+    localStorage.setItem("njHistory", list.join(","));
   };
   return (
     <div className={Style.header}>
       <NavBar
-        mode="dark"
         className={Style.nav}
+        mode="dark"
         leftContent={
           <span
-            className={classNames("iconfont", "icon-back", Style.back)}
+            className={ClassNames("iconfont", "icon-back", Style.back)}
             onClick={() => {
               history.push("/category");
             }}
@@ -50,8 +51,8 @@ export default memo(function Header() {
         className={Style.search}
         placeholder="寻找宝贝..."
         maxLength={8}
-        onChange={(value) => {
-          setValue(value);
+        onChange={(val) => {
+          setValue(val);
         }}
         onSubmit={() => {
           submit();

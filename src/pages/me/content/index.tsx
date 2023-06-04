@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Style from "./style.module.less";
 import avatar from "@/assets/images/avatar.png";
@@ -33,11 +33,19 @@ export default memo(function Content() {
     },
   ];
 
+  const [userName, setUserName] = useState<string>("未登录");
+
   return (
     <div className={Style.content}>
-      <div className={Style.contentTop}>
+      <div
+        className={Style.contentTop}
+        onClick={() => {
+          // 点击之后登陆
+          history.push("/login");
+        }}
+      >
         <img src={avatar} alt="" />
-        <span>杨孟鑫</span>
+        <span>{userName}</span>
       </div>
       <ul className={Style.contentMiddle}>
         <li>

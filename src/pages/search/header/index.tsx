@@ -4,24 +4,27 @@ import { useHistory } from "react-router-dom";
 import Style from "@/pages/search/header/style.module.less";
 import ClassNames from "classnames";
 
-export default memo(function NJHeader() {
+export default memo(function Header() {
   const history = useHistory();
   const [value, setValue] = useState("");
   const submit = () => {
-    // console.log(value);
     // 1.获取以前的数据
     const localStorage = window.localStorage;
     // 2.将当前数据添加到以前数据的前面
-    const result = localStorage.getItem("njHistory");
+    const result = localStorage.getItem("searchHistory");
     let list: string[] = [];
     if (result) {
       list = result.split(",");
     }
-    console.log(list);
-    list.unshift(value);
-    console.log(list);
-    // 3.将添加之后的数据重新存储起来
-    localStorage.setItem("njHistory", list.join(","));
+    // 检查当前需要保存的内容是否存在
+    // 不存在的情况下，才往前插东西
+    if (!list.includes(value)) {
+      list.unshift(value);
+      // 3.将添加之后的数据重新存储起来
+      localStorage.setItem("searchHistory", list.join(","));
+    }
+    // 4. 跳转到搜索结果界面
+    history.push(`searchResult/${value}`);
   };
   return (
     <div className={Style.header}>

@@ -19,6 +19,7 @@ const proxy = loadData({
   "GET /api/v1/category": "./db/category",
   "GET /api/v1/cart": "./db/cart",
   "GET /api/v1/order": "./db/order",
+  "GET /api/v1/hot": "./db/hot",
 });
 
 module.exports = noProxy ? {} : delay(proxy, 1000);

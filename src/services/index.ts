@@ -15,3 +15,4 @@ export const getProducts = () => Network.get("/api/v1/products");
 export const getCategory = () => Network.get("/api/v1/category");
 export const getCart = () => Network.get("/api/v1/cart");
 export const getOrder = () => Network.get("/api/v1/order");
+export const getHot = () => Network.get("/api/v1/hot");

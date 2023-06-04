@@ -24,7 +24,6 @@ export default memo(function Product(props) {
 
   useEffect(() => {
     getProducts().then((response) => {
-      console.log(response.data);
       setProducts(response.data);
     });
   }, []);

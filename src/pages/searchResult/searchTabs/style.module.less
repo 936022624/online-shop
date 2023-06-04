@@ -1,0 +1,47 @@
+.main{
+  ul{
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    li{
+      font-size: 22px;
+      color: #222;
+      position: relative;
+      &.active{
+        color: #f23030;
+      }
+      b{
+        display: block;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent #222 transparent;
+        position: absolute;
+        top: -10px;
+        right: -25px;
+        &.bActive{
+          border-color: transparent transparent #f23030 transparent;
+        }
+      }
+      i{
+        display: block;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 10px;
+        border-color: #222 transparent transparent transparent;
+        position: absolute;
+        bottom: -10px;
+        right: -25px;
+        &.iActive{
+          border-color: #f23030 transparent transparent transparent;
+        }
+      }
+    }
+  }
+}

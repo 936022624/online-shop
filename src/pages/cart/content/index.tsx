@@ -28,7 +28,6 @@ export default memo(function Content(props) {
 
   useEffect(() => {
     getCart().then((response) => {
-      console.log(response.data);
       setCarts(response.data);
     });
   }, []);

@@ -1,14 +1,16 @@
 import React, { memo, useState, useEffect } from "react";
 import { Modal } from "antd-mobile";
 import Style from "@/pages/search/history/style.module.less";
+import { useHistory } from "react-router-dom";
 
 const alert = Modal.alert;
 
 export default memo(function History() {
   const [list, setList] = useState<string[]>([]);
+  const history = useHistory();
+
   useEffect(() => {
     const localStorage = window.localStorage;
-    console.log("localStorage", localStorage);
     const result = localStorage.getItem("searchHistory");
     if (result) {
       setList(result.split(","));
@@ -43,7 +45,15 @@ export default memo(function History() {
           </p>
           <ul className={Style.historyBottom}>
             {list.map((val) => {
-              return <li>{val}</li>;
+              return (
+                <li
+                  onClick={() => {
+                    history.push(`searchResult/${val}`);
+                  }}
+                >
+                  {val}
+                </li>
+              );
             })}
           </ul>
         </div>

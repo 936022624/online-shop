@@ -27,7 +27,6 @@ export default memo(function Notice(props) {
 
   useEffect(() => {
     getMenus().then((response) => {
-      console.log(response.data);
       const list: Array<DataType> = [];
       response.data.forEach((val: MenuType) => {
         list.push({

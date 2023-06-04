@@ -6,6 +6,7 @@ const Category = React.lazy(() => import("@/pages/category"));
 const Cart = React.lazy(() => import("@/pages/cart"));
 const Me = React.lazy(() => import("@/pages/me"));
 const Search = React.lazy(() => import("@/pages/search"));
+const SearchResult = React.lazy(() => import("@/pages/searchResult"));
 const Login = React.lazy(() => import("@/pages/login"));
 const Detail = React.lazy(() => import("@/pages/home/detail"));
 const List = React.lazy(() => import("@/pages/list"));
@@ -35,6 +36,10 @@ const routes = [
   {
     path: "/search",
     component: Search,
+  },
+  {
+    path: "/searchResult/:key",
+    component: SearchResult,
   },
   {
     path: "/login",

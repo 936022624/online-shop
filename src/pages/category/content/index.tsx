@@ -21,7 +21,6 @@ export default memo(function Content(props) {
   const history = useHistory();
   useEffect(() => {
     getCategory().then((response) => {
-      console.log(response.data);
       const list: any[] = [];
       response.data.forEach((val: CategoryType) => {
         const tab = {

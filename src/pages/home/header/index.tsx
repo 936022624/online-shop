@@ -27,7 +27,7 @@ export default memo(function Header() {
               history.push("/login");
             }}
           >
-            登陆
+            登录
           </span>
         }
       />

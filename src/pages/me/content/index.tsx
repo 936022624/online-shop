@@ -40,7 +40,7 @@ export default memo(function Content() {
       <div
         className={Style.contentTop}
         onClick={() => {
-          // 点击之后登陆
+          // 点击之后登录
           history.push("/login");
         }}
       >

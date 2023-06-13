@@ -8,6 +8,7 @@ const Me = React.lazy(() => import("@/pages/me"));
 const Search = React.lazy(() => import("@/pages/search"));
 const SearchResult = React.lazy(() => import("@/pages/searchResult"));
 const Login = React.lazy(() => import("@/pages/login"));
+const Register = React.lazy(() => import("@/pages/register"));
 const Detail = React.lazy(() => import("@/pages/home/detail"));
 const List = React.lazy(() => import("@/pages/list"));
 const Order = React.lazy(() => import("@/pages/order"));
@@ -44,6 +45,10 @@ const routes = [
   {
     path: "/login",
     component: Login,
+  },
+  {
+    path: "/register",
+    component: Register,
   },
   {
     path: "/me",
